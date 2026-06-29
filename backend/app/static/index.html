@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Interview Prep Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AI career lab</p>
+          <h1>Practice interviews and score resumes for AI roles.</h1>
+          <p class="lede">
+            A portfolio-ready FastAPI application for mock interviews, answer feedback,
+            and resume-to-job matching.
+          </p>
+          <div class="status-card">
+            <span>System status</span>
+            <strong id="health-status">Checking...</strong>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <h2>Target role</h2>
+          <p id="job-title">Loading...</p>
+          <p id="job-description"></p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Account</h2>
+          <form id="auth-form">
+            <input name="name" placeholder="Your name" value="Asha Patel" />
+            <input name="email" type="email" placeholder="Email" value="asha@example.com" required />
+            <input name="password" type="password" placeholder="Password" value="demo1234" required />
+            <div class="button-row">
+              <button type="button" id="register-button">Create account</button>
+              <button type="submit" class="secondary-button">Login</button>
+            </div>
+          </form>
+          <p class="result" id="auth-result">Create an account or log in to save your progress.</p>
+        </article>
+
+        <article class="card">
+          <h2>Create interview session</h2>
+          <form id="session-form">
+            <input name="candidate_name" placeholder="Your name" value="Asha" required />
+            <input
+              name="target_role"
+              placeholder="Target role"
+              value="AI Software Engineer Intern"
+              required
+            />
+            <input
+              name="experience_level"
+              placeholder="Experience level"
+              value="Student / New Graduate"
+              required
+            />
+            <input
+              name="focus_areas"
+              placeholder="Focus areas (comma separated)"
+              value="LLMs, FastAPI, React"
+            />
+            <button type="submit">Start session</button>
+          </form>
+          <p class="result" id="session-result"></p>
+        </article>
+
+        <article class="card">
+          <h2>Generate question</h2>
+          <button id="question-button">Get interview question</button>
+          <div class="result">
+            <p id="question-text">No question generated yet.</p>
+            <p id="question-meta"></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Answer feedback</h2>
+          <textarea id="answer-input" rows="8" placeholder="Paste your answer here"></textarea>
+          <button id="feedback-button">Review answer</button>
+          <div class="result" id="feedback-result"></div>
+        </article>
+
+        <article class="card wide">
+          <h2>Resume match scorer</h2>
+          <textarea
+            id="resume-input"
+            rows="12"
+            placeholder="Paste resume text to compare against the job description"
+          ></textarea>
+          <button id="resume-button">Score resume</button>
+          <div class="result" id="resume-result"></div>
+        </article>
+
+        <article class="card wide">
+          <h2>Dashboard</h2>
+          <p class="result" id="dashboard-summary">Log in to view saved sessions, feedback, and resume scores.</p>
+          <div class="dashboard-grid">
+            <div class="result">
+              <h3>Sessions</h3>
+              <div id="dashboard-sessions">No data yet.</div>
+            </div>
+            <div class="result">
+              <h3>Recent feedback</h3>
+              <div id="dashboard-feedback">No data yet.</div>
+            </div>
+            <div class="result">
+              <h3>Resume history</h3>
+              <div id="dashboard-resumes">No data yet.</div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+  </html>
